@@ -1,27 +1,46 @@
 # HandsonperMaterial
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.6.
+Component merupakan main building block untuk membangun aplikasi angular
+kita dapat membuat component secara manual dengan cara:
 
-## Development server
+- buat folder pages didalam folder app
+- buat file dengan nama pages.component.ts
+- panggil @Component dari angular core untuk mendefine bahwa file tersebut merupakan componen angular
+- didalam component, terdapat beberapa attribut penting yang dapat digunakan yaitu selector, template dan style
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+``` @Component({
+  // berguna sebagai naming ketika komponen dipanggil oleh file view lainnya
+  selector: 'app-pages',
+  // berguna sebagai view/ui dari component ini
+  // jika ingin lebih dari 1 line bisa menggunakan `` backtick bukan '' petik
+  template: '<html><body><h1>Hello world</h1></body></html>',
+  // berguna sebagai styling view/ui
+  styles:  ['h1 { font-weight: bold; }']
+})
+```
 
-## Code scaffolding
+- jangan lupa untuk melakukan export component agar bisa dibaca oleh file lainnya
+`export class PagesComponent{}`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+daftarkan juga PagesComponent ke module yang akan memanggil, contohnya appModule
+  declarations: [
+    AppComponent,
+    PagesComponent
+  ],
 
-## Build
+jika ingin memisahkan ts, html dan css. Buatlah file
+pages.component.html
+pages.component.css
+dalam folder pages
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+kemudian ubah settingan pada
+@Component({
+  selector: 'app-pages',
+  templateUrl: './pages.component.html',
+  styleUrls: ['./pages.component.css']
+})
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Jika ingin melakukan auto generate 1 file html dan css
+`ng generate component hero-app --inline-style`
+Jika ingin melakukan auto generate component lengkap dengan file html, css dan spec untuk testing:
+`ng generate component hero-app`

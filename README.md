@@ -44,3 +44,5 @@ Jika ingin melakukan auto generate 1 file html dan css
 `ng generate component hero-app --inline-style`
 Jika ingin melakukan auto generate component lengkap dengan file html, css dan spec untuk testing:
 `ng generate component hero-app`
+jika ingin dimasukkan pada folder generate:
+`ng generate component generate/hero-app`

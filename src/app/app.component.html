@@ -1,19 +1,17 @@
-<!-- <app-pages></app-pages>
-<app-hero-app></app-hero-app> -->
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-4">
-      {{data}}
-      <button (click)="changeFromParent()" class="btn btn-success">Change from parent</button>
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <a class="nav-link" href="#">Features</a>
+        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link disabled">Disabled</a>
+      </div>
     </div>
-    <div *ngIf="data != 2; else other" class="col-md-8">
-      <!-- <app-pages [parentData]=data (newItemEvent)="addData($event)"></app-pages> -->
-      <app-pages [parentData]=data></app-pages>
-    </div>
-    <ng-template #other>
-      <app-hero-app></app-hero-app>
-    </ng-template>
-
   </div>
-</div>
+</nav>
+<app-login></app-login>

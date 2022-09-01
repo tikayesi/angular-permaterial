@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PagesComponent } from './pages/pages.component';
 import { HeroAppComponent } from './hero-app/hero-app.component';
+import { LoginComponent } from './auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { HeroAppComponent } from './hero-app/hero-app.component';
     PagesComponent,
     HeroAppComponent,
     HeroAppComponent,
-    HeroAppComponent
+    HeroAppComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

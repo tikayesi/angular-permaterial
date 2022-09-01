@@ -1,34 +1,24 @@
 # HandsonperMaterial
 
-<https://angular.io/guide/lifecycle-hooks>
+## Styling menggunakan bootstrap
 
-* constructor
-dipanggil pertama kali ketika component dibuat
+ `npm install bootstrap`
 
-* ngOnInit
-akan terpanggil 1 kali ketika component pertama kali dijalankan
-contohnya pake setInterval time
+Tambahkan code berikut pada angular.json bagian style dan script:
 
-* ngOnchange
-akan terpanggil ketika sebuah component menerima perubahan data dari component lain dan dipanggil sebelum on init
-contohnya counter yang dikirim dari app component dan diterima oleh pages component
+* Hati-hati, tambahkan style dan script jangan dibagian test (bawah) karena tidak akan terload
 
-* ngOnDestroy
-akan terpanggil ketika component berganti dengan component lainnya
-contohnya destroy setInterval time berhenti ketika melakukan pengkodisian menggunakan
-if pada html yang tadinya menampilkan pages component berganti menjadi hero component
+ "styles": [
+              "src/styles.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css" //tambahkan ini
+            ],
+            "scripts": [
+              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" //tambahkan ini
+            ]
 
-* ngOnCheck
-terpanggil setiap kali terdeteksi adanya perubahan
+### Styling
 
-* ngAfterContentInit
-terpanggil setelah content ditampilkan di view
+Selanjutnya kita akan menggunakan styling pada angular, untuk melakukan test apakah bootstrap sudah berjalan atau belum dapat mengcopykan code yang ada pada navbar.
+Dan untuk melakukan script jsnya sudah terload belum, pastikan dropdownnya berjalan jika tampilan responsive.
 
-* ngAfterContentChecked
-terpanggil setiap kali content sudah di check
 
-* ngAfterViewInit
-terpanggil setelah component beserta child component (jika ada) ditampilkan dan selesai di initial
-
-* ngAfterViewChecked
-terpanggil setiap kali view dan childviewnya (jika ada) sudah di check

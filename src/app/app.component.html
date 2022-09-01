@@ -1,2 +1,19 @@
-<app-pages></app-pages>
-<app-hero-app></app-hero-app>
+<!-- <app-pages></app-pages>
+<app-hero-app></app-hero-app> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      {{data}}
+      <button (click)="changeFromParent()" class="btn btn-success">Change from parent</button>
+    </div>
+    <div *ngIf="data != 2; else other" class="col-md-8">
+      <!-- <app-pages [parentData]=data (newItemEvent)="addData($event)"></app-pages> -->
+      <app-pages [parentData]=data></app-pages>
+    </div>
+    <ng-template #other>
+      <app-hero-app></app-hero-app>
+    </ng-template>
+
+  </div>
+</div>

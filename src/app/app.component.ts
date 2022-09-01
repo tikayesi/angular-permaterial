@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'handsonper-material';
+  data = 0;
+
+  changeFromParent(): void {
+    this.data += 1;
+  }
+
+  addData(newData: number){
+    this.data = newData;
+  }
+
 }

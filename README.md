@@ -1,48 +1,34 @@
 # HandsonperMaterial
 
-Component merupakan main building block untuk membangun aplikasi angular
-kita dapat membuat component secara manual dengan cara:
+<https://angular.io/guide/lifecycle-hooks>
 
-- buat folder pages didalam folder app
-- buat file dengan nama pages.component.ts
-- panggil @Component dari angular core untuk mendefine bahwa file tersebut merupakan componen angular
-- didalam component, terdapat beberapa attribut penting yang dapat digunakan yaitu selector, template dan style
+* constructor
+dipanggil pertama kali ketika component dibuat
 
-``` @Component({
-  // berguna sebagai naming ketika komponen dipanggil oleh file view lainnya
-  selector: 'app-pages',
-  // berguna sebagai view/ui dari component ini
-  // jika ingin lebih dari 1 line bisa menggunakan `` backtick bukan '' petik
-  template: '<html><body><h1>Hello world</h1></body></html>',
-  // berguna sebagai styling view/ui
-  styles:  ['h1 { font-weight: bold; }']
-})
-```
+* ngOnInit
+akan terpanggil 1 kali ketika component pertama kali dijalankan
+contohnya pake setInterval time
 
-- jangan lupa untuk melakukan export component agar bisa dibaca oleh file lainnya
-`export class PagesComponent{}`
+* ngOnchange
+akan terpanggil ketika sebuah component menerima perubahan data dari component lain dan dipanggil sebelum on init
+contohnya counter yang dikirim dari app component dan diterima oleh pages component
 
-daftarkan juga PagesComponent ke module yang akan memanggil, contohnya appModule
-  declarations: [
-    AppComponent,
-    PagesComponent
-  ],
+* ngOnDestroy
+akan terpanggil ketika component berganti dengan component lainnya
+contohnya destroy setInterval time berhenti ketika melakukan pengkodisian menggunakan
+if pada html yang tadinya menampilkan pages component berganti menjadi hero component
 
-jika ingin memisahkan ts, html dan css. Buatlah file
-pages.component.html
-pages.component.css
-dalam folder pages
+* ngOnCheck
+terpanggil setiap kali terdeteksi adanya perubahan
 
-kemudian ubah settingan pada
-@Component({
-  selector: 'app-pages',
-  templateUrl: './pages.component.html',
-  styleUrls: ['./pages.component.css']
-})
+* ngAfterContentInit
+terpanggil setelah content ditampilkan di view
 
-Jika ingin melakukan auto generate 1 file html dan css
-`ng generate component hero-app --inline-style`
-Jika ingin melakukan auto generate component lengkap dengan file html, css dan spec untuk testing:
-`ng generate component hero-app`
-jika ingin dimasukkan pada folder generate:
-`ng generate component generate/hero-app`
+* ngAfterContentChecked
+terpanggil setiap kali content sudah di check
+
+* ngAfterViewInit
+terpanggil setelah component beserta child component (jika ada) ditampilkan dan selesai di initial
+
+* ngAfterViewChecked
+terpanggil setiap kali view dan childviewnya (jika ada) sudah di check

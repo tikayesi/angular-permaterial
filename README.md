@@ -13,13 +13,12 @@ kita dapat memanggil title pada app.component.html menggunakan `{{title}}`
 String interpolation ini bisa menerima type data apapun baik, string, number, boolean, array ataupun object
 
 ```export class AppComponent {
-```  title = 'Learn Angular';
-```  arr = [1,2,3]
-```  data = 0;
-```  bool = true;
-```  obj = {traineeName:"Tika", gender: 'Female'}
-
-```}
+  title = 'Learn Angular';
+  arr = [1,2,3]
+  data = 0;
+  bool = true;
+  obj = {traineeName:"Tika", gender: 'Female'}
+} ```
 
 Pada html
 ```<h1 class="text-center">{{title}}</h1>

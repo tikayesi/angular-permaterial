@@ -6,15 +6,43 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'handsonper-material';
+  isDisabled: boolean = false;
+  title = 'Learn Angular';
+  arr = [1,2,3]
   data = 0;
+  bool = true;
+  obj = {traineeName:'Tika', gender: 'Female'}
+  showMessage = ''
+  name: string = '';
+  dataParentName = '';
 
-  changeFromParent(): void {
-    this.data += 1;
-  }
+  numberCount : number = 0;
 
-  addData(newData: number){
-    this.data = newData;
-  }
+  ngOnInit() {
+    setTimeout(() => {
+       this.isDisabled = !this.isDisabled;
+    }, 2000);
+}
+
+onButtonClick(){
+  this.showMessage = 'This message is showed by click event'
+}
+
+onKeyPress(event: any) {
+  console.log(event);
+  this.name = event.target.value;
+}
+
+incrementNumber(){
+  this.numberCount++;
+}
+
+addDataName(){
+this.dataParentName = this.name;
+}
+
+addDataFromChild(val: number){
+this.numberCount = val
+}
 
 }

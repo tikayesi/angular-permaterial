@@ -14,4 +14,32 @@
     </div>
   </div>
 </nav>
-<app-login></app-login>
+<h1 class="text-center">{{title}}</h1>
+<p>{{arr}}</p>
+<p>{{data}}</p>
+<p>{{obj.traineeName}}</p>
+<p>{{bool}}</p>
+
+<button type="button" class="btn btn-primary"
+[disabled]="!isDisabled" (click)="onButtonClick()">Get Started</button>
+{{showMessage}}
+
+<input
+    type="text"
+    class="form-control"
+    id="name"
+    (input)="onKeyPress($event)">
+
+    <div class="row">
+      <div class="col">
+          <p>{{ name }}
+      </div>
+  </div>
+
+  {{numberCount}}
+  <button (click)="incrementNumber()">INCREMENT</button>
+  <button (click)="addDataName()">Send data</button>
+<app-pages [parentData]="numberCount" [nameFromParent]="dataParentName" (newItemEvent)="addDataFromChild($event)"></app-pages>
+
+<p>number count parent</p>
+{{numberCount}}

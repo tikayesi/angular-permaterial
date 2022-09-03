@@ -1,5 +1,5 @@
 <div class="login main">
-  <form>
+  <form [formGroup]="loginForm" method="post" (ngSubmit)="login(loginForm.value)">
     <div class="d-flex flex-column login container">
       <div class="d-flex align-items-center login containerCenter">
         <div class="d-flex justify-content-end login containerEnd">
@@ -15,9 +15,10 @@
                   <input
                     type="email"
                     class="form-control"
-                    id="exampleInputusername1"
+                    id="email"
                     aria-describedby="usernameHelp"
                     placeholder="Enter email"
+                    formControlName="email"
                   />
                   <!-- <small class="text-danger">{this.state.errorName.email}</small> -->
                 </div>
@@ -25,9 +26,10 @@
                 <input
                   type="password"
                   class="form-control"
-                  id="exampleInputPassword1"
+                  id="password"
                   aria-describedby="usernameHelp"
                   placeholder="Enter password"
+                  formControlName="password"
                 />
                 <!-- <small class="text-danger">{this.state.errorName.password}</small> -->
               </div>
@@ -36,7 +38,6 @@
                 <button
                   type="submit"
                   class="btn btn-primary login inputButtonawesome-button-sm"
-                  disabled={this.state.isValid}
                 >
                   <i class="fas fa-sign-in"></i> Login
                 </button>

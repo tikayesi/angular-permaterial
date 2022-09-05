@@ -1,2 +1,3 @@
-<app-anime-form></app-anime-form>
-<!-- <app-anime-list></app-anime-list> -->
+<app-anime-form (animeVal)="getAnimes($event)"></app-anime-form>
+<!-- {{animes}} -->
+<app-anime-list [animesFromParent]="animes"></app-anime-list>

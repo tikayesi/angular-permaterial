@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -9,6 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class AnimeFormComponent implements OnInit {
 
   animes: any[] = [];
+  @Output() animeVal = new EventEmitter<any>();
 
   animeForm: FormGroup = new FormGroup({
     id: new FormControl(null),
@@ -27,6 +28,7 @@ export class AnimeFormComponent implements OnInit {
 
   submitData(data: any) {
     this.animes.push(data);
+    this.animeVal.emit(data);
   }
 
 

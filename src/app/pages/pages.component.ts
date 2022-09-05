@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
   selector: 'app-pages',
@@ -7,17 +7,11 @@ import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 })
 
 export class PagesComponent implements OnInit{
-  @Input() emailFromParent: string = '';
-  @Output() isLogin = new EventEmitter<string>();
 
   constructor() {
   }
 
   ngOnInit() {
-  }
-
-  logout(){
-    this.isLogin.emit();
   }
 
 }

@@ -1,0 +1,46 @@
+<div class="container">
+  <form [formGroup]="animeForm" (ngSubmit)="submitData(animeForm.value)">
+    <div class="form-group">
+      <label for="id">Id</label>
+      <input type="text" class="form-control" id="id" aria-describedby="id" placeholder="Enter Id" formControlName="id">
+      <div *ngIf="form('id').invalid && form('id').dirty || form('id').touched">
+        <div class="alert alert-danger" role="alert" *ngIf="form('id').errors?.['required']">
+          This field is required
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" placeholder="Name" formControlName="name">
+    </div>
+    <div *ngIf="form('name').invalid && form('name').dirty || form('name').touched">
+      <div class="alert alert-danger" role="alert" *ngIf="form('name').errors?.['required']">
+        This field is required
+      </div>
+      <div class="alert alert-danger" role="alert" *ngIf="form('name').errors?.['minlength']">
+        Name can't less than 3 characters.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="cover">Cover</label>
+      <input type="text" class="form-control" id="cover" placeholder="Cover" formControlName="cover">
+      <div *ngIf="form('cover').invalid && form('cover').dirty || form('cover').touched">
+        <div class="alert alert-danger" role="alert" *ngIf="form('cover').errors?.['required']">
+          This field is required
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <!-- test awal handson list diload disini dulu -->
+  <!-- <div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let anime of animes">
+      {{anime.name}}
+      <div class="card">
+        <div class="anime-img">
+          <img src="{{ anime.cover }}" class="img-fluid" alt="Work 1" />
+        </div>
+      </div>
+    </div>
+  </div> -->
+</div>

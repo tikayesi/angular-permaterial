@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from "@angular/core";
 })
 
 export class ExponentPipe implements PipeTransform{
-  transform(value: number, exponent = 2): number {
+  transform(value: number, exponent = 1): number {
     return Math.pow(value, exponent)
   }
 }

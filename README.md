@@ -12,3 +12,11 @@ PercentPipe -> Transforms a number to a percentage string, formatted according t
 
 ### Create custom pipes
 
+Dapat membuat manual pipe dengan melakukan implement pipe transform atau bisa juga melakukan generate dengan perintah
+ng generate p [nama pipe]
+
+penggunaan pipe ditandai dengan: | pada halaman html
+
+kita juga dapat memberikan argument pipe dengan `{{3 | exponent: 3 }}`
+
+

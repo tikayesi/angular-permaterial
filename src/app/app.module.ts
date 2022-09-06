@@ -7,6 +7,7 @@ import { PagesComponent } from './pages/pages.component';
 import { HeroAppComponent } from './hero-app/hero-app.component';
 import { LoginComponent } from './auth/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AgePipe } from './shared/pipes/age.pipe';
 import { ExponentPipe } from './shared/pipes/exponent.pipe';
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ExponentPipe } from './shared/pipes/exponent.pipe';
     HeroAppComponent,
     HeroAppComponent,
     LoginComponent,
-    ExponentPipe
+    ExponentPipe,
+    AgePipe
   ],
   imports: [
     BrowserModule,

@@ -19,4 +19,4 @@ penggunaan pipe ditandai dengan: | pada halaman html
 
 kita juga dapat memberikan argument pipe dengan `{{3 | exponent: 3 }}`
 
-
+Selain itu, kita juga dapat menambahkan plugin lain seperti moment untuk penggunaan manipulasi date

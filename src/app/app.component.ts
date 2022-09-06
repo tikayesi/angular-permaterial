@@ -8,6 +8,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class AppComponent {
   isLogin: boolean = false;
   email: string = '';
+  birthday: Date = new Date('2002-01-01')
 
   ngOnInit() {
 }

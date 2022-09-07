@@ -1,14 +1,2 @@
-<!-- <app-login *ngIf="!isLogin; else pages" (loginStatus)="setLoginComponent($event)" ></app-login>
-
-<ng-template #pages>
-<app-pages [emailFromParent]='email' (isLogin)="logout()"></app-pages>
-</ng-template> -->
-
-<p>My birthday {{birthday | date}}</p>
-<p>The hero's birthday is {{ birthday | date:"MM/dd/yy" }} </p>
-The chained hero's birthday is
-{{ birthday | date | uppercase}}
-<br>
-{{3 | exponent: 3 }}
-<br>
-{{birthday | age}}
+<p>Hello!</p>
+<app-todo></app-todo>

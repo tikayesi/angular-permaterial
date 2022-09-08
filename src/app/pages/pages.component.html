@@ -1,6 +1,11 @@
-<html>
-  Hello pages
-  <p>{{parentData}}</p>
-  {{nameFromParent}}
-  <button (click)="decrementFromChild()">from child data</button>
-</html>
+<br> <br>
+
+<h2>child.component </h2>
+
+<p> Title: {{title}} </p>
+
+<button (click)="countChange(clickCount)">change count</button>
+
+<br>
+
+<input type="text" [(ngModel)]="childName" (ngModelChange)="nameChange($event)">

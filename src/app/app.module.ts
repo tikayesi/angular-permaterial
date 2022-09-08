@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { PagesComponent } from './pages/pages.component';
 import { HeroAppComponent } from './hero-app/hero-app.component';
 import { LoginComponent } from './auth/login/login.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LoginComponent } from './auth/login/login.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

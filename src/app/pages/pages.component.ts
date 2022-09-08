@@ -7,14 +7,8 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
 })
 
 export class PagesComponent implements OnInit{
-  @Input() parentData: number = 0;
-  @Input() nameFromParent: string = '';
-  @Output() newItemEvent = new EventEmitter<number>();
-  intervalId: any;
-  numberChild: number = 0;
 
   constructor() {
-    console.log('Constructor');
 
   }
 
@@ -22,8 +16,35 @@ export class PagesComponent implements OnInit{
 
   }
 
-  decrementFromChild(){
-    this.newItemEvent.emit(this.numberChild = this.numberChild - 1)
+  private _title: string = '';
+
+  @Input()
+  public set title(title: string){
+    this._title = title;
   }
+  public get title() {
+    return this._title;
+  }
+
+
+  public clickCount: number = 0;
+
+  @Output()
+  onChanged = new EventEmitter<number>();
+
+  countChange(count: number) {
+    count++
+    this.clickCount = count;
+    this.onChanged.emit( this.clickCount );
+  }
+
+  @Input()
+  public childName: string =""; //TwoWayBinding for main component
+
+  @Output() childNameChange = new EventEmitter<string>();
+  nameChange(name: string){
+    this.childNameChange.emit(name);
+  }
+
 
 }
